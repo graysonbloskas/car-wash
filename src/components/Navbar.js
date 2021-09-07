@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/carwash-logo-02.png';
 import './Navbar.css';
-
+import { animateScroll as scroll } from 'react-scroll';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -23,6 +23,11 @@ function Navbar() {
     showButton();
   }, []);
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+    closeMobileMenu();
+  };
+
   window.addEventListener('resize', showButton);
 
   return (
@@ -30,20 +35,31 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img src={Logo} alt="" className='logo'/>
+            <img src={Logo} alt='' className='logo' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/' className='nav-links' onClick={toggleHome} >
                 Home
               </Link>
             </li>
             <li className='nav-item'>
+              {/* <ScrollLink
+                to='services'
+                spy={true}
+                smooth={true}
+                duration={500}
+                className='nav-links'
+                activeClass='some-active-class'
+              >
+                Services
+              </ScrollLink> */}
+
               <Link
-                to='card'
+                to='/'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
