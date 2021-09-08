@@ -11,7 +11,7 @@ function Card() {
   return (
     <Element id='services'>
       <div className='cards'>
-        <h1>Check out Our Exterior Packages</h1>
+        <h1 className="home-h1">Check out Our Exterior Packages</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>

@@ -6,14 +6,13 @@ import './Hero.css';
 function Hero() {
   return (
     <Element to='hero'>
-      <div className='container'>
+      <div className='h-screen bg-opacity-50 bg-black flex items-center justify-center contain'>
         <video src={Video} autoPlay loop muted />
-        <h1>Mobile Carwash</h1>
-        <p>Take the Pain out of the Detail</p>
+        <h1 className="hero-title">Mobile Carwash</h1>
+        <p className="hero-text">Tell Us Where You Are & We'll Handle The Detail</p>
       </div>
     </Element>
   );
 }
 
 export default Hero;
-// 
