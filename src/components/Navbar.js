@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/mobile-carwash-02.png';
 import './Navbar.css';
@@ -11,18 +11,6 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  // const showButton = () => {
-  //   if (window.innerWidth <= 960) {
-  //     setButton(false);
-  //   } else {
-  //     setButton(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   showButton();
-  // }, []);
-
   const toggleHome = () => {
     scroll.scrollToTop();
     closeMobileMenu();
@@ -32,7 +20,7 @@ function Navbar() {
     scroll.scrollToBottom()
     closeMobileMenu();
   }
-  // window.addEventListener('resize', showButton);
+
   window.addEventListener('scroll', toggleHome);
 
   return (
@@ -52,16 +40,6 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              {/* <ScrollLink
-                to='services'
-                spy={true}
-                smooth={true}
-                duration={500}
-                className='nav-links'
-                activeClass='some-active-class'
-              >
-                Services
-              </ScrollLink> */}
 
               <Link
                 to='/'
@@ -81,13 +59,7 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
+              
             </li>
           </ul>
         </div>
