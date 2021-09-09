@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/carwash-logo-02.png';
+import Logo from '../assets/images/mobile-carwash-02.png';
 import './Navbar.css';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -28,7 +28,12 @@ function Navbar() {
     closeMobileMenu();
   };
 
+  const toggleContact = () => {
+    scroll.scrollToBottom()
+    closeMobileMenu();
+  }
   window.addEventListener('resize', showButton);
+  window.addEventListener('scroll', toggleHome);
 
   return (
     <>
@@ -70,7 +75,7 @@ function Navbar() {
               <Link
                 to='/contact'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={toggleContact}
               >
                 Contact
               </Link>

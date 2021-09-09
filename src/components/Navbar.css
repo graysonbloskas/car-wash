@@ -9,14 +9,14 @@
 .navbar {
   background: linear-gradient(90deg, rgb(87, 206, 198) 0%, rgb(87, 206, 160) 100%);
   border: 1.5px solid #fff;
-  height: 125px;
-  display: flex;
+  height: 145px;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  top: 0 !important;
+  position: sticky !important;
+  z-index: 15000;
 }
 
 .navbar-container {
@@ -84,6 +84,7 @@
 .menu-icon {
   display: none;
 }
+
 
 @media screen and (max-width: 960px) {
   .NavbarItems {
@@ -160,4 +161,28 @@
     transition: 250ms;
   }
   
+}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) { 
+ .navbar {
+  position: sticky !important;
+ }
+
+ .logo {
+   transform: scale(0.75);
+   padding-right: 4rem;
+ }
+ 
+ .navbar-container {
+   height: 2rem;
+   align-items: center;
+ }
+
+ .menu-icon {
+   padding: auto;
+ }
 }

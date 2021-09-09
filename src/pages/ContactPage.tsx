@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState, useRef } from 'react';
 import formId from '../config';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import '../App.css';
 
 type FormState = {
   email: string;
@@ -75,11 +76,11 @@ function ContactPage() {
     setRecaptchaToken(token as string);
   };
   return (
-    <div className='flex items-center justify-center h-screen flex-col'>
+    <div className='flex flex-col bg-white pb-20 form'>
       <div className='w-2/3 m-auto p-8 shadow-lg '>
-        <h1 className='text-4xl font-bold flex items-center'>
+        <h1 className='text-4xl font-bold flex items-center contact-title'>
           <i className='fas fa-paper-plane mr-3'> </i>
-          <span> Contact Us</span>
+          <span> Get a Quote Today!</span>
         </h1>
         {message && (
           <div className={`my-4 text-white w-full p-4 ${message.class}`}>
@@ -123,6 +124,7 @@ function ContactPage() {
             ref={recaptchaRef}
             sitekey={recaptchaKey}
             onChange={updateRecaptchaToken}
+            className='recap'
           ></ReCAPTCHA>
 
           <button
